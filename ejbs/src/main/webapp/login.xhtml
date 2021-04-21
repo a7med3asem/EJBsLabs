@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <title>browser</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <h:body>
+        <ui:include src="home.xhtml"></ui:include>
+        <div class="container">
+            <h:form>
+                <div>
+                    <h5 class="card-title">Say Hello</h5>
+                    <br/>
+                    <h:inputText styleClass="form-control mb-3" label="Enter your Name" id="userName"
+                                 value="#{userBean.name}"/>
+                    <h:commandButton styleClass="btn btn-primary mt-4" value="Say Hello"
+                                     action="#{userBean.sayHelloUsingEJB()}"/>
+
+                </div>
+
+
+            </h:form>
+        </div>
+
+    </h:body>
+</f:view>
+</html>

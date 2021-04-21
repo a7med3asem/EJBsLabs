@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+    <ui:include src="home.xhtml"></ui:include>
+    <meta charset="UTF-8"/>
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+    <div class="container card shadow rounded-3 w-50 align-self-center border-dark mt-5">
+        <h:form styleClass="card-body">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">buy book</h5>
+                    Book Name <h:inputText styleClass="form-control mb-3" label="Amount" id="Amount"
+                                           value="#{cartBean.book}"/>
+                    <br/>
+                    <div class="last-sec">
+                        <h:commandButton styleClass="btn btn-primary mt-4" value="Add Book"
+                                         action="#{cartBean.addBook}"/>
+                        <h:commandButton styleClass="btn btn-danger ml-4 mt-4" value="Remove Book"
+                                         action="#{cartBean.removeBook}"/>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Cart Items</h5>
+                            <ui:repeat value="#{cartBean.content}" var="name">
+                                <li class="list-group-item">#{name}</li>
+                            </ui:repeat>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </h:form>
+
+    </div>
+</h:body>
+</html>

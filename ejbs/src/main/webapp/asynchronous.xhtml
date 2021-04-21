@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <ui:include src="home.xhtml"></ui:include>
+    <title>Asynchronous</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+    <div class="container">
+        <h:form styleClass="card-body">
+            <h:commandButton action="#{asynchronousBean.getWithSlow}" styleClass="btn btn-primary mr-4"
+                             value="Get With Slow"/>
+            <h:commandButton action="#{asynchronousBean.slowMethodWithReturnValue}" styleClass="btn btn-info"
+                             value="Get With Return"/>
+        </h:form>
+    </div>
+</f:view>
+</html>
